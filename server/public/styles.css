@@ -1,0 +1,32 @@
+/* Fonts */
+
+.cormorant-garamond-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 46px;
+}
+
+.roboto-nav-links {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+/* Anchor  */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Font Awesome Icons */
+
+.fa-cloud-moon {
+  font-size: 120px;
+  color: white;
+  text-shadow: 0 0 6px #000;
+}
