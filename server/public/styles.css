@@ -3,11 +3,36 @@
 .cormorant-garamond-heading {
   font-family: "Cormorant Garamond", serif;
   font-size: 46px;
+  font-weight: 600;
+}
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+span.cormorant-garment-light {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 .roboto-nav-links {
   font-family: Roboto, sans-serif;
   font-weight: bold;
+  font-style: italic;
+}
+
+.roboto-text {
+  font-family: Roboto, sans-serif;
 }
 
 /* Anchor  */
@@ -20,13 +45,50 @@ a {
 a:hover {
   color: black;
   cursor: pointer;
-  font-weight: normal;
 }
 
 /* Font Awesome Icons */
 
-.fa-cloud-moon {
+.big-fa-cloud-moon {
   font-size: 120px;
   color: white;
   text-shadow: 0 0 6px #000;
+}
+
+.small-fa-cloud-moon {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 0 6px #000;
+}
+
+.fa-star-and-crescent {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 0 6px #000;
+}
+
+/* Background Color */
+
+.grey-background {
+  background-color: #e3e2e7;
+}
+
+.purple-background {
+  background-color: #aba4d6;
+}
+
+/* Submit Button */
+
+.black-button {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+/* Input */
+
+.input {
+  border: solid;
+  border-color: black;
 }
