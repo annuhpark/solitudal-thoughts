@@ -1,0 +1,40 @@
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.padding-right {
+  padding-right: 20px;
+}
+
+.padding-top {
+  padding-top: 20px;
+}
+
+.padding-top2 {
+  padding-top: 30px;
+}
+
+.padding-top3 {
+  padding-top: 40px;
+}
+
+.padding-bottom-sm {
+  padding-bottom: 10px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.padding-bottom3 {
+  padding-bottom: 40px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
