@@ -6,7 +6,7 @@ export default function LogIn(props) {
     <div>
       <div className="container-fluid purple-background">
         <div className="justify-content-center text-center padding-top3 padding-bottom3">
-          <span className="cormorant-garamond-light">“Self-care is how you take your<br></br> power back.” — Lalah Delia
+          <span className="cormorant-garamond-light">&quot;Self-care is how you take your<br></br> power back.&quot; — Lalah Delia
           </span>
         </div>
       </div>
