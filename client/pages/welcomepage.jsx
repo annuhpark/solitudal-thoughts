@@ -5,9 +5,7 @@ export default function WelcomePage(props) {
     <div>
       <div className="container-fluid purple-background">
         <div className="justify-content-center text-center padding-top3 padding-bottom3">
-          <span className="cormorant-garamond-light">&quot;Your illness is not your identity<br></br>
-            Your chemistry is not your<br></br>
-            character.&quot; - Rick Warren
+          <span className="cormorant-garamond-light">Welcome!
           </span>
         </div>
       </div>

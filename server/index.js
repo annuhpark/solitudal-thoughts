@@ -28,14 +28,14 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(publicPath));
 
-// app.get('/api/hello', (req, res) => {
-//   res.json({ hello: 'world' });
-// });
+app.get('/api/hello', (req, res) => {
+  res.json({ hello: 'world' });
+});
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    throw new ClientError(400, 'Username and Password are required fields!');
+    throw new ClientError(400, 'Email and Password are required fields!');
   }
   argon2
     .hash(password)
