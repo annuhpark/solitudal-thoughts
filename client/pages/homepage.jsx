@@ -67,7 +67,7 @@ export default class SignUp extends React.Component {
             </Form.Group>
           </div>
           <div className="row justify-content-center">
-            <Form.Group className="w-25 p-3 text-center margin-bottom" controlId="formBasicCheckbox">
+            <Form.Group className="w-25 p-3 text-center margin-bottom" controlId="formBasicButton">
               <Button className="btn btn-primary btn-sm black-button margin-right" variant="primary" type="submit">
                 sign up
               </Button>

@@ -13,8 +13,8 @@ export default class LogIn extends React.Component {
   }
 
   handleChange(event) {
-    // const { name, value } = event.target;
-    // this.setState({ [name]: value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
@@ -30,12 +30,11 @@ export default class LogIn extends React.Component {
           email: '',
           password: ''
         });
-        // window.localStorage.setItem('', resBody.token);
-        alert('Welcome back!');
+        window.localStorage.setItem('solitudalthoughts-jwt', resBody.token);
         window.location.hash = '#welcome';
       })
       .catch(err => {
-        console.error('Error ', err);
+        console.error('Error', err);
       });
   }
 
@@ -67,7 +66,7 @@ export default class LogIn extends React.Component {
               </Form.Group>
             </div>
             <div className="row justify-content-center">
-              <Form.Group className="w-25 p-3 text-center margin-bottom" controlId="formBasicCheckbox">
+              <Form.Group className="w-25 p-3 text-center margin-bottom" controlId="formBasicButton">
                 <Button className="btn btn-primary btn-sm black-button" variant="primary" type="submit">
                   Submit
                 </Button>
