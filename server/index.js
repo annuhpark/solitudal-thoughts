@@ -55,6 +55,44 @@ app.post('/api/auth/sign-up', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/auth/log-in', (req, res, next) => {
+  const { email, actualPassword } = req.body;
+  if (!email || !actualPassword) {
+    throw new ClientError(401, 'invalid login.');
+  }
+  const sql = `
+    select "userId",
+           "password"
+      from "users"
+     where "email" = $1
+  `;
+  const params = [email];
+  // console.log(sql);
+  // console.log(params);
+  db.query(sql, params)
+    .then(result => {
+      const [user] = result.rows;
+      // console.log(user);
+      if (!user) {
+        throw new ClientError(401, 'invalid login');
+      }
+      const { userId, password } = user;
+      // console.log(userId);
+      // console.log(password);
+      return argon2
+        .verify(password, actualPassword)
+        .then(isMatching => {
+          if (!isMatching) {
+            throw new ClientError(401, 'invalid login');
+          }
+          const payload = { userId, email };
+          const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+          res.json({ token, user: payload });
+        });
+    })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

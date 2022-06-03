@@ -12,8 +12,8 @@ export default function Navigation(props) {
         </a>
         <div className="col">
           <div className="flex-end">
-            <a href="#login" className="roboto-nav-links padding-right padding-top2">
-              login
+            <a href="#group" className="roboto-nav-links padding-right padding-top2">
+              groups
             </a>
             <a href="#ourstory" className="roboto-nav-links padding-right padding-top">
               our<br></br>

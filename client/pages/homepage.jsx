@@ -38,7 +38,7 @@ export default class SignUp extends React.Component {
           email: '',
           password: ''
         });
-        alert('Yay you are officially a member');
+        alert('Yay you are officially a member, good for you woohoooooooo.');
         window.location.hash = '#welcome';
       })
       .catch(error => {
@@ -68,9 +68,10 @@ export default class SignUp extends React.Component {
           </div>
           <div className="row justify-content-center">
             <Form.Group className="w-25 p-3 text-center margin-bottom" controlId="formBasicCheckbox">
-              <Button className="btn btn-primary btn-sm black-button" variant="primary" type="submit">
+              <Button className="btn btn-primary btn-sm black-button margin-right" variant="primary" type="submit">
                 sign up
               </Button>
+              <Button href="#login" variant="primary" type="button" className="btn btn-primary btn-sm black-button">already a member?</Button>
             </Form.Group>
           </div>
         </Form>
