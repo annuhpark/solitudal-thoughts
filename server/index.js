@@ -7,7 +7,7 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const jsonMiddleware = express.json();
 const ClientError = require('./client-error');
-const authorizationMiddleware = require('./authorization-middleware');
+// const authorizationMiddleware = require('./authorization-middleware');
 const jwt = require('jsonwebtoken');
 const pg = require('pg');
 const argon2 = require('argon2');
@@ -56,8 +56,8 @@ app.post('/api/auth/sign-up', (req, res, next) => {
 });
 
 app.post('/api/auth/log-in', (req, res, next) => {
-  const { email, actualPassword } = req.body;
-  if (!email || !actualPassword) {
+  const { email, userPassword } = req.body;
+  if (!email || !userPassword) {
     throw new ClientError(401, 'invalid login.');
   }
   const sql = `
@@ -80,7 +80,7 @@ app.post('/api/auth/log-in', (req, res, next) => {
       // console.log(userId);
       // console.log(password);
       return argon2
-        .verify(password, actualPassword)
+        .verify(password, userPassword)
         .then(isMatching => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');

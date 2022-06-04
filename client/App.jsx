@@ -1,13 +1,13 @@
 import React from 'react';
 import { parseRoute } from './lib';
-import Navigation from './pages/navigation';
-import NotFound from './pages/not-found';
-import SignUp from './pages/homepage';
-import OurStory from './pages/ourstory';
-import LogIn from './pages/login';
-import WelcomePage from './pages/welcomepage';
+import Navigation from './components/Navigation';
+import NotFound from './pages/NotFound';
+import Auth from './pages/Auth';
+import OurStory from './pages/OurStory';
+import SignIn from './components/SignIn';
+import Welcome from './pages/Welcome';
 import decodeToken from './lib/decode-token';
-import Groups from './pages/group';
+import Groups from './pages/Groups';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,20 +30,24 @@ export default class App extends React.Component {
     const { route } = this.state;
     const token = window.localStorage.getItem('solitudalthoughts-jwt');
 
+    if (!token) {
+      return <Auth />;
+    }
+
     if (route.path === '') {
-      return <SignUp />;
+      return <Auth />;
     }
     if (route.path === 'ourstory') {
       return <OurStory />;
     }
-    if (route.path === 'login') {
-      return <LogIn />;
+    if (route.path === 'signin') {
+      return <SignIn />;
     }
     if (route.path === 'welcome') {
-      return <WelcomePage />;
+      return <Welcome />;
     }
     if (route.path === 'group' && !token) {
-      return <SignUp />;
+      return <Auth />;
     }
     if (route.path === 'group' && token) {
       return <Groups />;
