@@ -35,7 +35,7 @@ export default class App extends React.Component {
       return <Auth />;
     }
 
-    if (route.path === '' && !token) {
+    if (route.path === '') {
       return <Auth />;
     }
     if (route.path === '' && token) {
