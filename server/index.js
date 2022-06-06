@@ -7,7 +7,7 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const jsonMiddleware = express.json();
 const ClientError = require('./client-error');
-const authorizationMiddleware = require('./authorization-middleware');
+// const authorizationMiddleware = require('./authorization-middleware');
 const jwt = require('jsonwebtoken');
 const pg = require('pg');
 const argon2 = require('argon2');
@@ -28,14 +28,14 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(publicPath));
 
-// app.get('/api/hello', (req, res) => {
-//   res.json({ hello: 'world' });
-// });
+app.get('/api/hello', (req, res) => {
+  res.json({ hello: 'world' });
+});
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    throw new ClientError(400, 'Username and Password are required fields!');
+    throw new ClientError(400, 'Email and Password are required fields!');
   }
   argon2
     .hash(password)
@@ -51,6 +51,44 @@ app.post('/api/auth/sign-up', (req, res, next) => {
           res.status(201).json(result.rows[0]);
         })
         .catch(err => next(err));
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/auth/log-in', (req, res, next) => {
+  const { email, userPassword } = req.body;
+  if (!email || !userPassword) {
+    throw new ClientError(401, 'invalid login.');
+  }
+  const sql = `
+    select "userId",
+           "password"
+      from "users"
+     where "email" = $1
+  `;
+  const params = [email];
+  // console.log(sql);
+  // console.log(params);
+  db.query(sql, params)
+    .then(result => {
+      const [user] = result.rows;
+      // console.log(user);
+      if (!user) {
+        throw new ClientError(401, 'invalid login');
+      }
+      const { userId, password } = user;
+      // console.log(userId);
+      // console.log(password);
+      return argon2
+        .verify(password, userPassword)
+        .then(isMatching => {
+          if (!isMatching) {
+            throw new ClientError(401, 'invalid login');
+          }
+          const payload = { userId, email };
+          const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+          res.json({ token, user: payload });
+        });
     })
     .catch(err => next(err));
 });

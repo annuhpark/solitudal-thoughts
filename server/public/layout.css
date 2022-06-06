@@ -35,6 +35,10 @@
   margin-bottom: 20px;
 }
 
+.margin-right {
+  margin-right: 20px;
+}
+
 .flex-direction-column {
   flex-direction: column;
 }

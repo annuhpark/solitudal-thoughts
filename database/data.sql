@@ -1,3 +1,4 @@
-insert into "users" ("userId", "email", "password")
-values (1, 'hello@gmail.com', 'hihi')
+insert into "users" ("email", "password")
+values ('bobby@bobby.com', 'bananas'),
+       ('hama@bobby.com', 'chanel')
 returning *;
