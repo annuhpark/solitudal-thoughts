@@ -19,80 +19,124 @@ const Quiz = () => {
             QUIZ
           </p>
         </div>
-        <div className="col-8 mx-auto">
+        <div className="col-6 mx-auto">
           <Form>
             <p className="roboto-questions">
               1. Do you have little interest or pleasure in doing things?
             </p>
-            {['radio'].map(type => (
-              <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
-                <Form.Check
-                  inline
-                  label="Not at all"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-1`}
-                />
-                <Form.Check
-                  inline
-                  label="Several days"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-2`}
-                />
-                <Form.Check
-                  inline
-                  label="More than half the days"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-3`}
-                />
-                <Form.Check
-                  inline
-                  label="Nearly every day"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-3`}
-                />
-              </div>
-            ))}
+            <div className="justify-content-center text-center padding-top">
+              {['radio'].map(type => (
+                <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
+                  <Form.Check
+                    inline
+                    label="Not at all"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-1`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Several days"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-2`}
+                  />
+                  <Form.Check
+                    inline
+                    label="More than half the days"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-3`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Nearly every day"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-3`}
+                  />
+                </div>
+              ))}
+            </div>
           </Form>
           <Form>
             <p className="roboto-questions padding-top2">
               2. Are you feeling depressed, down, or hopeless these days?
             </p>
+            <div className="justify-content-center text-center padding-top">
+              {['radio'].map(type => (
+                <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
+                  <Form.Check
+                    inline
+                    label="Not at all"
+                    name="group2"
+                    type={type}
+                    id={`inline-${type}-1`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Several days"
+                    name="group2"
+                    type={type}
+                    id={`inline-${type}-2`}
+                  />
+                  <Form.Check
+                    inline
+                    label="More than half the days"
+                    name="group2"
+                    type={type}
+                    id={`inline-${type}-3`}
+                  />
+                  <Form.Check
+                    inline
+                    label="Nearly every day"
+                    name="group2"
+                    type={type}
+                    id={`inline-${type}-3`}
+                  />
+                </div>
+              ))}
+            </div>
+          </Form>
+          <Form>
+            <p className="roboto-questions padding-top2">
+              3. How often have you been bothered by trouble falling or staying
+              asleep, or sleeping too much?
+            </p>
+            <div className="justify-content-center text-center padding-top">
             {['radio'].map(type => (
               <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
                 <Form.Check
                   inline
                   label="Not at all"
-                  name="group2"
+                  name="group3"
                   type={type}
                   id={`inline-${type}-1`}
                 />
                 <Form.Check
                   inline
                   label="Several days"
-                  name="group2"
+                  name="group3"
                   type={type}
                   id={`inline-${type}-2`}
                 />
                 <Form.Check
                   inline
                   label="More than half the days"
-                  name="group2"
+                  name="group3"
                   type={type}
                   id={`inline-${type}-3`}
                 />
                 <Form.Check
                   inline
                   label="Nearly every day"
-                  name="group2"
+                  name="group3"
                   type={type}
                   id={`inline-${type}-3`}
                 />
               </div>
             ))}
+            </div>
           </Form>
           <Form>
             <p className="roboto-questions padding-top2">
