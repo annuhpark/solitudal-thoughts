@@ -7,7 +7,6 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const jsonMiddleware = express.json();
 const ClientError = require('./client-error');
-// const authorizationMiddleware = require('./authorization-middleware');
 const jwt = require('jsonwebtoken');
 const pg = require('pg');
 const argon2 = require('argon2');
@@ -28,8 +27,21 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(publicPath));
 
-app.get('/api/hello', (req, res) => {
-  res.json({ hello: 'world' });
+app.post('/api/quiz', (req, res, next) => {
+  const { quizName } = req.body;
+  const sql = `
+  insert into "quizzes" ("quizName")
+  values ($1)
+  returning *
+  `;
+
+  const params = [quizName];
+  db.query(sql, params)
+    .then(result => {
+      const [file] = result.rows;
+      res.status(201).json(file);
+    })
+    .catch(error => next(error));
 });
 
 app.post('/api/auth/sign-up', (req, res, next) => {
@@ -67,18 +79,13 @@ app.post('/api/auth/log-in', (req, res, next) => {
      where "email" = $1
   `;
   const params = [email];
-  // console.log(sql);
-  // console.log(params);
   db.query(sql, params)
     .then(result => {
       const [user] = result.rows;
-      // console.log(user);
       if (!user) {
         throw new ClientError(401, 'invalid login');
       }
       const { userId, password } = user;
-      // console.log(userId);
-      // console.log(password);
       return argon2
         .verify(password, userPassword)
         .then(isMatching => {
