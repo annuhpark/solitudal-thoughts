@@ -10,8 +10,10 @@ export default class SignOut extends React.Component {
 
   handleSignout() {
     window.localStorage.removeItem('solitudalthoughts-jwt');
-    this.setState({ user: null });
-    window.location.assign('#');
+    this.setState({
+      user: null
+    });
+    window.location.hash = '#';
   }
 
   render() {

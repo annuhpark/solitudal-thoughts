@@ -34,9 +34,9 @@ export default class App extends React.Component {
     const { route } = this.state;
     const token = window.localStorage.getItem('solitudalthoughts-jwt');
 
-    if (!token) {
-      return <Auth />;
-    }
+    // if (!token) {
+    //   return <Auth />;
+    // }
 
     if (route.path === '' && !token) {
       return <Auth />;
@@ -53,16 +53,13 @@ export default class App extends React.Component {
     if (route.path === 'welcome') {
       return <Welcome />;
     }
-    if (route.path === 'group' && !token) {
-      return <Auth />;
-    }
-    if (route.path === 'group' && token) {
+    if (route.path === 'group') {
       return <Groups />;
     }
     if (route.path === 'quiz') {
       return <Quiz />;
     }
-    if (route.path === 'signout' && token) {
+    if (route.path === 'signout') {
       return <SignOut />;
     }
     return <NotFound />;

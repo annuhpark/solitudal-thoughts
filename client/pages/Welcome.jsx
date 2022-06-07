@@ -36,10 +36,12 @@ export default class Welcome extends React.Component {
             </p>
           </div>
           <div className="col-6 mx-auto">
-            <p className="cormorant-garamond-bold padding-top3 padding-bottom3">
-              new to solitudal thoughts? take our quiz so we can do our part of
-              providing the best practices for your state!
-            </p>
+            <div className="background justify-content-center text-center">
+              <p className="cormorant-garamond-bold padding-top3 padding-bottom3">
+                new to solitudal thoughts? take our quiz so we can do our part
+                of providing the best practices for your state!
+              </p>
+            </div>
           </div>
           <div className="row justify-content-center">
             <Form.Group

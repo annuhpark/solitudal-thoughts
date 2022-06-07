@@ -27,22 +27,22 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(publicPath));
 
-app.post('/api/quiz', (req, res, next) => {
-  const { quizName } = req.body;
-  const sql = `
-  insert into "quizzes" ("quizName")
-  values ($1)
-  returning *
-  `;
+// app.post('/api/quiz', (req, res, next) => {
+//   const { quizName } = req.body;
+//   const sql = `
+//   insert into "quizzes" ("quizName")
+//   values ($1)
+//   returning *
+//   `;
 
-  const params = [quizName];
-  db.query(sql, params)
-    .then(result => {
-      const [file] = result.rows;
-      res.status(201).json(file);
-    })
-    .catch(error => next(error));
-});
+//   const params = [quizName];
+//   db.query(sql, params)
+//     .then(result => {
+//       const [file] = result.rows;
+//       res.status(201).json(file);
+//     })
+//     .catch(error => next(error));
+// });
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
