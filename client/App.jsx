@@ -9,6 +9,7 @@ import Welcome from './pages/Welcome';
 import decodeToken from './lib/decode-token';
 import Groups from './pages/Groups';
 import Quiz from './pages/Quiz';
+import SignOut from './components/SignOut';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ export default class App extends React.Component {
       return <Auth />;
     }
 
-    if (route.path === '') {
+    if (route.path === '' && !token) {
       return <Auth />;
     }
     if (route.path === '' && token) {
@@ -60,6 +61,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'quiz') {
       return <Quiz />;
+    }
+    if (route.path === 'signout' && token) {
+      return <SignOut />;
     }
     return <NotFound />;
   }

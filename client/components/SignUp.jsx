@@ -16,8 +16,8 @@ const SignUp = () => {
       .then(resBody => {
         setEmail('');
         setPassword('');
-        alert('Yay you are officially a member, good for you woohoooooooo.');
-        window.location.hash = '#welcome';
+        alert('Yay, now sign in you freak');
+        window.location.hash = '#';
       })
       .catch(error => {
         console.error('Error: ', error);

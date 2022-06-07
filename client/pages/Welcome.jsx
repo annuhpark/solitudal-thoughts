@@ -47,7 +47,7 @@ export default class Welcome extends React.Component {
               controlId="formBasicButton"
             >
               <Button
-                className="quiz-button btn btn-primary btn-med black-button"
+                className="quiz-button btn btn-primary btn-med black-button margin-bottom"
                 variant="primary"
                 type="button"
                 onClick={this.handleShow}
@@ -60,6 +60,19 @@ export default class Welcome extends React.Component {
               show={this.state.showModal}
               body="We're going to ask you a series of questions. Please pick an answer that you identify the most with, & make sure to be honest! Remember that there is no judgment in this space, &amp; being honest helps us better identify where you are with your mental health."
             />
+          </div>
+          <div className="background justify-content-center text-center">
+            <p className="cormorant-garamond-light padding-top3">
+              not you? sign out
+            </p>
+            <Button
+              className="quiz-button btn btn-primary btn-med black-button margin-bottom"
+              variant="primary"
+              type="button"
+              href="#signout"
+            >
+              sign out
+            </Button>
           </div>
         </div>
       </div>
