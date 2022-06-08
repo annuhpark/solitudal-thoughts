@@ -10,6 +10,7 @@ export default class SignOut extends React.Component {
 
   handleSignout() {
     window.localStorage.removeItem('solitudalthoughts-jwt');
+    window.localStorage.removeItem('quiz');
     this.setState({
       user: null
     });

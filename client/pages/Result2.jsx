@@ -6,7 +6,9 @@ export default function Result2(props) {
       <div className="container-fluid purple-background">
         <div className="justify-content-center text-center padding-top3 padding-bottom3">
           <span className="cormorant-garamond-light">
-            &quot;There is no health without mental health; mental health<br></br> is too important to be left to the professionals alone, <br></br>& mental health is everyone&apos;s business.&quot; <br></br>-Vikram Patel
+            &quot;Just because no one else can heal or do your inner work for
+            you <br></br>doesn&apos;t mean you can, should, or need to do it
+            alone.&quot;<br></br> -Lisa Olivera
           </span>
         </div>
       </div>
@@ -15,7 +17,7 @@ export default function Result2(props) {
           <i className="fas fa-star-and-crescent padding-bottom3"></i>
         </div>
         <div className="col-8 mx-auto padding-bottom3">
-          <img src="https://images.squarespace-cdn.com/content/v1/60818be3726c6c6c3f24a841/1622140128102-KWTH9R30PZ4DOZ9UN9KB/Mental+Health.png"></img>
+          <img src="https://i0.wp.com/calmatters.org/wp-content/uploads/2022/01/childrens-mental-health.jpg?fit=1200%2C1198&ssl=1"></img>
           <div className="justify-content-center text-center">
             <p className="cormorant-garamond-light padding-top">
               Good job in taking your first step to a more natural way to better
@@ -26,14 +28,37 @@ export default function Result2(props) {
               <i className="fas fa-heart padding-top5 padding-bottom5"></i>
             </div>
             <div>
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              <i className="fas fa-arrow-down padding-top5 padding-bottom"></i>
             </div>
           </div>
         </div>
-        <div className="col-10 mx-auto">
+        <div className="row justify-content-center text-center padding-top3 padding-bottom">
+          <div className="col-6 mx-auto text-center">
+            <p className="cormorant-garamond-bold padding-top2 padding-bottom">
+              your score:
+            </p>
+            <span className="roboto-text">
+              Your happiness is at average! Although the test seems to say that
+              you are generally mentally stable, it also reinforces that no one
+              is happy all of the time. Maybe you could be doing a bit more work
+              to feel more of a sense of purpose. When you accept and embrace
+              the tough times, you build insight & muscle for more of the happy
+              times or periods of contentment. You are also building empathy for
+              others & learning more about how to be fully yourself. Being more
+              real, happy, & evolved means expanding your internal experience to
+              include an ever-growing awareness of all that is present.
+            </span>
+          </div>
+        </div>
+        <div className="col-10 mx-auto padding-bottom5">
           <div className="row justify-content-center">
             <div className="text-center">
-              <i className="fas fa-medkit padding-top2"></i>
+              <div>
+                <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              </div>
+              <div>
+                <i className="fas fa-medkit padding-top2"></i>
+              </div>
             </div>
             <p className="cormorant-garamond-bold text-center padding-bottom">
               self-care 101:
@@ -156,26 +181,6 @@ export default function Result2(props) {
               <div className="text-center padding-top">
                 <i className="fas fa-comment-slash"></i>
               </div>
-            </div>
-          </div>
-          <div className="row justify-content-center text-center padding-top3 padding-bottom5">
-            <div className="col-6 mx-auto text-center">
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
-              <p className="cormorant-garamond-bold padding-top2 padding-bottom">
-                your score:
-              </p>
-              <span className="roboto-text">
-                Your happiness is at average! Although the test seems to say
-                that you are generally mentally stable, it also reinforces that
-                no one is happy all of the time. Maybe you could be doing a bit
-                more work to feel more of a sense of purpose. When you accept
-                and embrace the tough times, you build insight & muscle for more
-                of the happy times or periods of contentment. You are also
-                building empathy for others & learning more about how to be
-                fully yourself. Being more real, happy, & evolved means
-                expanding your internal experience to include an ever-growing
-                awareness of all that is present.
-              </span>
             </div>
           </div>
         </div>
