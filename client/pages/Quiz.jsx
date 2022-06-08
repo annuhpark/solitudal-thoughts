@@ -4,38 +4,80 @@ import { Form, Button } from 'react-bootstrap';
 class Quiz extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      totalPoints: 0
-    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    // console.log('hello');
-    // event.preventDefault();
-    // fetch('api/auth/log-in', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(this.state)
-    // })
-    //   .then(response => response.json())
-    //   .then(resBody => {
-
-    //     if (resBody.error) {
-    //       window.location.hash = '#signin';
-    //     } else {
-    //       window.localStorage.setItem('solitudalthoughts-jwt', resBody.token);
-    //       window.location.hash = '#welcome';
-    //     }
-
-    //     this.setState({
-    //       email: '',
-    //       userPassword: ''
-    //     });
-    //   })
-    //   .catch(err => {
-    //     console.error('Error', err);
-    //   });
+    let total = 0;
+    event.preventDefault();
+    const ele1 = document.getElementsByName('group1');
+    for (let i = 0; i < ele1.length; i++) {
+      if (ele1[i].checked) {
+        total = total + parseInt(ele1[i].value);
+      }
+    }
+    const ele2 = document.getElementsByName('group2');
+    for (let i = 0; i < ele2.length; i++) {
+      if (ele2[i].checked) {
+        total = total + parseInt(ele2[i].value);
+      }
+    }
+    // console.log(total);
+    const ele3 = document.getElementsByName('group3');
+    for (let i = 0; i < ele3.length; i++) {
+      if (ele3[i].checked) {
+        total = total + parseInt(ele3[i].value);
+      }
+    }
+    const ele4 = document.getElementsByName('group4');
+    for (let i = 0; i < ele4.length; i++) {
+      if (ele4[i].checked) {
+        total = total + parseInt(ele4[i].value);
+      }
+    }
+    const ele5 = document.getElementsByName('group5');
+    for (let i = 0; i < ele5.length; i++) {
+      if (ele5[i].checked) {
+        total = total + parseInt(ele5[i].value);
+      }
+    }
+    const ele6 = document.getElementsByName('group6');
+    for (let i = 0; i < ele6.length; i++) {
+      if (ele6[i].checked) {
+        total = total + parseInt(ele6[i].value);
+      }
+    }
+    const ele7 = document.getElementsByName('group7');
+    for (let i = 0; i < ele7.length; i++) {
+      if (ele7[i].checked) {
+        total = total + parseInt(ele7[i].value);
+      }
+    }
+    const ele8 = document.getElementsByName('group8');
+    for (let i = 0; i < ele8.length; i++) {
+      if (ele8[i].checked) {
+        total = total + parseInt(ele8[i].value);
+      }
+    }
+    const ele9 = document.getElementsByName('group9');
+    for (let i = 0; i < ele9.length; i++) {
+      if (ele9[i].checked) {
+        total = total + parseInt(ele9[i].value);
+      }
+    }
+    const ele10 = document.getElementsByName('group10');
+    for (let i = 0; i < ele10.length; i++) {
+      if (ele10[i].checked) {
+        total = total + parseInt(ele10[i].value);
+      }
+    }
+    if (total >= 10 && total < 20) {
+      window.location.hash = 'resultone';
+    } else if (total >= 20 && total < 30) {
+      window.location.hash = 'resulttwo';
+    } else if (total >= 30 && total <= 40) {
+      window.location.hash = 'resultthree';
+    }
   }
 
   render() {
@@ -71,6 +113,7 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -78,6 +121,7 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -85,13 +129,15 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group1"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -108,6 +154,7 @@ class Quiz extends React.Component {
                       name="group2"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -115,6 +162,7 @@ class Quiz extends React.Component {
                       name="group2"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -122,13 +170,15 @@ class Quiz extends React.Component {
                       name="group2"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group2"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -146,6 +196,7 @@ class Quiz extends React.Component {
                       name="group3"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -153,6 +204,7 @@ class Quiz extends React.Component {
                       name="group3"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -160,13 +212,15 @@ class Quiz extends React.Component {
                       name="group3"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group3"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -183,6 +237,7 @@ class Quiz extends React.Component {
                       name="group4"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -190,6 +245,7 @@ class Quiz extends React.Component {
                       name="group4"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -197,13 +253,15 @@ class Quiz extends React.Component {
                       name="group4"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group4"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -221,6 +279,7 @@ class Quiz extends React.Component {
                       name="group5"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -228,6 +287,7 @@ class Quiz extends React.Component {
                       name="group5"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -235,13 +295,15 @@ class Quiz extends React.Component {
                       name="group5"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group5"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -260,6 +322,7 @@ class Quiz extends React.Component {
                       name="group6"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -267,6 +330,7 @@ class Quiz extends React.Component {
                       name="group6"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -274,13 +338,15 @@ class Quiz extends React.Component {
                       name="group6"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group6"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -298,6 +364,7 @@ class Quiz extends React.Component {
                       name="group7"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -305,6 +372,7 @@ class Quiz extends React.Component {
                       name="group7"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -312,13 +380,15 @@ class Quiz extends React.Component {
                       name="group7"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group7"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -336,6 +406,7 @@ class Quiz extends React.Component {
                       name="group8"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -343,6 +414,7 @@ class Quiz extends React.Component {
                       name="group8"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -350,13 +422,15 @@ class Quiz extends React.Component {
                       name="group8"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group8"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -373,6 +447,7 @@ class Quiz extends React.Component {
                       name="group9"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -380,6 +455,7 @@ class Quiz extends React.Component {
                       name="group9"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -387,13 +463,15 @@ class Quiz extends React.Component {
                       name="group9"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group9"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
@@ -411,6 +489,7 @@ class Quiz extends React.Component {
                       name="group10"
                       type={type}
                       id={`inline-${type}-1`}
+                      value='1'
                     />
                     <Form.Check
                       inline
@@ -418,6 +497,7 @@ class Quiz extends React.Component {
                       name="group10"
                       type={type}
                       id={`inline-${type}-2`}
+                      value='2'
                     />
                     <Form.Check
                       inline
@@ -425,13 +505,15 @@ class Quiz extends React.Component {
                       name="group10"
                       type={type}
                       id={`inline-${type}-3`}
+                      value='3'
                     />
                     <Form.Check
                       inline
                       label="Extremely difficult"
                       name="group10"
                       type={type}
-                      id={`inline-${type}-3`}
+                      id={`inline-${type}-4`}
+                      value='4'
                     />
                   </div>
                 ))}
