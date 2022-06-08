@@ -5,6 +5,8 @@ const app = express();
 const publicPath = path.join(__dirname, 'public');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const uploadsMiddleware = require('./uploads-middleware');
+const authorizationMiddleware = require('./authorization-middleware');
 const jsonMiddleware = express.json();
 const ClientError = require('./client-error');
 const jwt = require('jsonwebtoken');
@@ -26,23 +28,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use(express.static(publicPath));
-
-// app.post('/api/quiz', (req, res, next) => {
-//   const { quizName } = req.body;
-//   const sql = `
-//   insert into "quizzes" ("quizName")
-//   values ($1)
-//   returning *
-//   `;
-
-//   const params = [quizName];
-//   db.query(sql, params)
-//     .then(result => {
-//       const [file] = result.rows;
-//       res.status(201).json(file);
-//     })
-//     .catch(error => next(error));
-// });
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
@@ -101,6 +86,26 @@ app.post('/api/auth/log-in', (req, res, next) => {
 });
 
 app.use(errorMiddleware);
+app.use(authorizationMiddleware);
+
+app.post('/api/groups', uploadsMiddleware, (req, res, next) => {
+
+  const { nameOfGroup, description } = req.body;
+  const { userId } = req.user;
+  const sql = `
+    insert into "groups" ("userId", "nameOfGroup", "description")
+    values ($1, $2, $3)
+    returning *
+  `;
+
+  const params = [userId, nameOfGroup, description];
+  db.query(sql, params)
+    .then(result => {
+      const [group] = result.rows;
+      res.status(201).json(group);
+    })
+    .catch(err => next(err));
+});
 
 app.listen(process.env.PORT, () => {
   process.stdout.write(`\n\napp listening on port ${process.env.PORT}\n\n`);
