@@ -22,6 +22,7 @@ const db = new pg.Pool({
 
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
+app.use(errorMiddleware);
 
 if (process.env.NODE_ENV === 'development') {
   app.use(require('./dev-middleware')(publicPath));
@@ -85,7 +86,6 @@ app.post('/api/auth/log-in', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.use(errorMiddleware);
 app.use(authorizationMiddleware);
 
 app.post('/api/groups', uploadsMiddleware, (req, res, next) => {
@@ -93,12 +93,11 @@ app.post('/api/groups', uploadsMiddleware, (req, res, next) => {
   const { nameOfGroup, description } = req.body;
   const { userId } = req.user;
   const sql = `
-    insert into "groups" ("userId", "nameOfGroup", "description")
+    insert into "groups" ("nameOfGroup", "description", "userId")
     values ($1, $2, $3)
     returning *
   `;
-
-  const params = [userId, nameOfGroup, description];
+  const params = [nameOfGroup, description, userId];
   db.query(sql, params)
     .then(result => {
       const [group] = result.rows;

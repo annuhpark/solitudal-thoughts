@@ -4,12 +4,23 @@ import { Button } from 'react-bootstrap';
 export default class Welcome2 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { quizResults: window.localStorage.getItem('quiz') };
+    this.state = {
+      quizResults: window.localStorage.getItem('quiz'),
+      groups: []
+    };
   }
 
   render() {
     const quizResults = this.state.quizResults;
     return (
+      <>
+      <div className="container-fluid purple-background">
+        <div className="justify-content-center text-center padding-top3 padding-bottom3">
+          <span className="cormorant-garamond-light">
+            “Not until we are lost do we begin to understand ourselves” <br></br>― Henry David Thoreau
+          </span>
+        </div>
+      </div>
       <div className="container-fluid grey-background">
         <div className="row justify-content-center text-center padding-top2">
           <div className="col-2">
@@ -59,6 +70,7 @@ export default class Welcome2 extends React.Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

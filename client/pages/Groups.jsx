@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default class Welcome extends React.Component {
   constructor(props) {
@@ -24,51 +24,49 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <div className="background container-fluid grey-background">
-          <div
-            className="background justify-content-center text-center padding-top3"
-            onClick={this.hideModal}
-          >
-            <i className="fas fa-cloud-moon small-fa-cloud-moon"></i>
-            <p className="cormorant-garamond-bold padding-top2 padding-bottom">
-              WELCOME
-            </p>
+        <div className="container-fluid purple-background">
+          <div className="justify-content-center text-center padding-top3 padding-bottom3">
+            <span className="cormorant-garamond-light">
+              &quot;Just because you don&apos;t understand it doesn&apos;t mean
+              it isn&apos;t so.&quot; <br></br>— Lemony Snicket
+            </span>
           </div>
-          <div className="col-6 mx-auto">
-            <div className="background justify-content-center text-center">
-              <p className="cormorant-garamond-bold padding-top3 padding-bottom3">
-                new to solitudal thoughts? take our quiz so we can do our part
-                of providing the best practices for your state!
+        </div>
+        <div className="container-fluid grey-background">
+          <div className="row justify-content-center text-center padding-top2 padding-bottom5">
+            <div className="col-4">
+              <p className="cormorant-garamond-bold padding-top5">
+                your community
               </p>
+              <i className="far fa-comment"></i>
             </div>
-          </div>
-          <div className="row justify-content-center">
-            <Form.Group
-              className="w-25 p-3 text-center margin-bottom"
-              controlId="formBasicButton"
-            >
-              <Button
-                className="quiz-button btn btn-primary btn-med black-button margin-bottom"
-                variant="primary"
-                type="button"
-                onClick={this.handleShow}
-              >
-                take our quiz!
-              </Button>
-            </Form.Group>
-          </div>
-          <div className="background justify-content-center text-center">
-            <p className="cormorant-garamond-light padding-top3">
-              not you? sign out
-            </p>
-            <Button
-              className="quiz-button btn btn-primary btn-med black-button margin-bottom"
-              variant="primary"
-              type="button"
-              href="#signout"
-            >
-              sign out
-            </Button>
+            <div className="col-4">
+              <div className="row justify-content-center text-center padding-top5">
+                <div>
+                  <Button
+                    className="quiz-button btn btn-primary btn-med black-button margin-right"
+                    variant="primary"
+                    type="button"
+                    href="#creategroup"
+                  >
+                    create a group
+                  </Button>
+                  <Button
+                    className="quiz-button btn btn-primary btn-med black-button"
+                    variant="primary"
+                    type="button"
+                    href="#group"
+                  >
+                    search for group
+                  </Button>
+                </div>
+              </div>
+              <div className="row justify-content-center text-center">
+                <p className="cormorant-garamond-bold padding-top2">
+                  groups you are in:
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

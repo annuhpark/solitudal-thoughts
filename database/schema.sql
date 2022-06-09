@@ -37,6 +37,7 @@ CREATE TABLE "groups" (
     "groupId" serial NOT NULL,
     "nameOfGroup" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "userId" integer NOT NULL,
     CONSTRAINT "groups_pk" PRIMARY KEY ("groupId")
 ) WITH (
   OIDS=FALSE
@@ -94,3 +95,4 @@ ALTER TABLE "userAnswers" ADD CONSTRAINT "userAnswers_fk1" FOREIGN KEY ("quizQue
 ALTER TABLE "userAnswers" ADD CONSTRAINT "userAnswers_fk2" FOREIGN KEY ("quizId") REFERENCES "quizzes"("quizId");
 ALTER TABLE "userResults" ADD CONSTRAINT "userResults_fk0" FOREIGN KEY ("userId") REFERENCES "users"("userId");
 ALTER TABLE "userResults" ADD CONSTRAINT "userResults_fk1" FOREIGN KEY ("quizId") REFERENCES "quizzes"("quizId");
+ALTER TABLE "groups" ADD CONSTRAINT "groups_fk1" FOREIGN KEY ("userId") REFERENCES "users"("userId");

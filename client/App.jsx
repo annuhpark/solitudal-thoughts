@@ -10,11 +10,12 @@ import Welcome from './pages/Welcome';
 import Welcome2 from './pages/Welcome2.jsx';
 import decodeToken from './lib/decode-token';
 import Groups from './pages/Groups';
-import Quiz from './pages/Quiz';
+import Quiz from './pages/Quiz/Quiz';
 import SignOut from './components/SignOut';
-import Result1 from './pages/Result1';
-import Result2 from './pages/Result2';
-import Result3 from './pages/Result3';
+import Result1 from './pages/Quiz/Result1';
+import Result2 from './pages/Quiz/Result2';
+import Result3 from './pages/Quiz/Result3';
+import CreateGroupForm from './pages/CreateGroupForm.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -79,6 +80,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'signout') {
       return <SignOut />;
+    }
+    if (route.path === 'creategroup') {
+      return <CreateGroupForm />;
     }
     return <NotFound />;
   }
