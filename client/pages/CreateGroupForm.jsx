@@ -22,9 +22,9 @@ export default class CreateGroupForm extends React.Component {
     formData.append('description', this.state.description);
     formData.append('userId', this.state.userId);
 
-    fetch('/api/groups', {
+    fetch('/api/upload', {
       method: 'POST',
-      headers: { 'x-access-token': window.localStorage.getItem('solitudalthoughts-jwt') },
+      headers: { 'X-Access-Token': window.localStorage.getItem('solitudalthoughts-jwt') },
       body: formData
     })
       .then(response => response.json())
@@ -70,7 +70,7 @@ export default class CreateGroupForm extends React.Component {
                 type="text"
                 name="nameOfGroup"
                 placeholder="enter name of your group"
-                value={this.state.group}
+                value={this.state.nameOfGroup}
                 onChange={this.handleTitle}
               />
             </Form.Group>

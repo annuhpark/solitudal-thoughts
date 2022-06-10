@@ -20,15 +20,34 @@ const db = new pg.Pool({
   }
 });
 
-app.use(staticMiddleware);
-app.use(jsonMiddleware);
-app.use(errorMiddleware);
-
 if (process.env.NODE_ENV === 'development') {
   app.use(require('./dev-middleware')(publicPath));
 }
 
-app.use(express.static(publicPath));
+app.use(staticMiddleware);
+app.use(jsonMiddleware);
+
+app.get('/api/groups', (req, res, next) => {
+  const sql = `
+    select "groupId",
+           "nameOfGroup",
+           "description"
+      from "groups"
+  `;
+
+  db.query(sql)
+    .then(result => {
+      const groups = result.rows;
+      res.status(200).json(groups);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+
+});
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
@@ -88,7 +107,7 @@ app.post('/api/auth/log-in', (req, res, next) => {
 
 app.use(authorizationMiddleware);
 
-app.post('/api/groups', uploadsMiddleware, (req, res, next) => {
+app.post('/api/upload', uploadsMiddleware, (req, res, next) => {
 
   const { nameOfGroup, description } = req.body;
   const { userId } = req.user;
@@ -106,6 +125,7 @@ app.post('/api/groups', uploadsMiddleware, (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.use(errorMiddleware);
 app.listen(process.env.PORT, () => {
   process.stdout.write(`\n\napp listening on port ${process.env.PORT}\n\n`);
 });
