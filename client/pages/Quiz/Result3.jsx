@@ -17,7 +17,7 @@ export default function Result3(props) {
           <i className="fas fa-star-and-crescent padding-bottom3"></i>
         </div>
         <div className="col-8 mx-auto padding-bottom3">
-          <img src="https://images.squarespace-cdn.com/content/v1/5452d441e4b0c188b51fef1a/1608653779312-P3IM7SVB5IRPRTHXYKZ7/mental-health-wellness-during-covid-19.jpg"></img>
+          <img src="https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2019/kids-with-mental-illness-blog.jpeg"></img>
           <div className="justify-content-center text-center">
             <p className="cormorant-garamond-light padding-top">
               Good job in taking your first step to a more natural way to better
@@ -28,14 +28,44 @@ export default function Result3(props) {
               <i className="fas fa-heart padding-top5 padding-bottom5"></i>
             </div>
             <div>
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              <i className="fas fa-arrow-down padding-top5 padding-bottom"></i>
             </div>
           </div>
         </div>
-        <div className="col-10 mx-auto">
+        <div className="row justify-content-center text-center padding-top3 padding-bottom">
+          <div className="col-6 mx-auto text-center">
+            <p className="cormorant-garamond-bold padding-top2 padding-bottom">
+              your score:
+            </p>
+            <span className="roboto-text">
+              You&apos;re unhappier than average. Okay, so you have some work to
+              do, but the good news is you can easily shift your mood with a
+              little practice. Start by accepting what you&apos;re feeling
+              rather than invalidating it and embrace all feelings with
+              curiosity and nonjudgement. Be open to the awareness that those
+              feelings are only part of the story. It also means you might have
+              some old wounds that need healing. When you treat yourself with
+              compassion, & live in alignment with your values, you show up in a
+              kinder way for others and are better able to experience the joy of
+              the moment and see the good in others. That is a deeply satisfying
+              place that brings waves of contentment. Focus on gratitude, find
+              the good in yourself and others, & create a narrative that brings
+              meaning to your life experience. Recognize that each of us is a
+              small part of a whole & we are never alone with our suffering or
+              our joy. Just by taking this quiz, you&apos;re already on your way
+              to leading a happier, more meaningful life. Jot something down
+            </span>
+          </div>
+        </div>
+        <div className="col-10 mx-auto padding-bottom5">
           <div className="row justify-content-center">
             <div className="text-center">
-              <i className="fas fa-medkit padding-top2"></i>
+              <div>
+                <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              </div>
+              <div>
+                <i className="fas fa-medkit padding-top2"></i>
+              </div>
             </div>
             <p className="cormorant-garamond-bold text-center padding-bottom">
               self-care 101:
@@ -158,33 +188,6 @@ export default function Result3(props) {
               <div className="text-center padding-top">
                 <i className="fas fa-comment-slash"></i>
               </div>
-            </div>
-          </div>
-          <div className="row justify-content-center text-center padding-top3 padding-bottom5">
-            <div className="col-6 mx-auto text-center">
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
-              <p className="cormorant-garamond-bold padding-top2 padding-bottom">
-                your score:
-              </p>
-              <span className="roboto-text">
-                You&apos;re unhappier than average. Okay, so you have some work
-                to do, but the good news is you can easily shift your mood with
-                a little practice. Start by accepting what you&apos;re feeling
-                rather than invalidating it and embrace all feelings with
-                curiosity and nonjudgement. Be open to the awareness that those
-                feelings are only part of the story. It also means you might
-                have some old wounds that need healing. When you treat yourself
-                with compassion, & live in alignment with your values, you show
-                up in a kinder way for others and are better able to experience
-                the joy of the moment and see the good in others. That is a
-                deeply satisfying place that brings waves of contentment. Focus
-                on gratitude, find the good in yourself and others, & create a
-                narrative that brings meaning to your life experience. Recognize
-                that each of us is a small part of a whole & we are never alone
-                with our suffering or our joy. Just by taking this quiz,
-                you&apos;re already on your way to leading a happier, more
-                meaningful life.
-              </span>
             </div>
           </div>
         </div>

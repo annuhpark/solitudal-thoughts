@@ -73,10 +73,13 @@ class Quiz extends React.Component {
     }
     if (total >= 10 && total < 20) {
       window.location.hash = 'resultone';
+      window.localStorage.setItem('quiz', '#resultone');
     } else if (total >= 20 && total < 30) {
       window.location.hash = 'resulttwo';
+      window.localStorage.setItem('quiz', '#resulttwo');
     } else if (total >= 30 && total <= 40) {
       window.location.hash = 'resultthree';
+      window.localStorage.setItem('quiz', '#resultthree');
     }
   }
 

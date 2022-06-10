@@ -28,14 +28,40 @@ export default function Result1(props) {
               <i className="fas fa-heart padding-top5 padding-bottom5"></i>
             </div>
             <div>
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              <i className="fas fa-arrow-down padding-top5 padding-bottom"></i>
             </div>
           </div>
         </div>
-        <div className="col-10 mx-auto">
+        <div className="row justify-content-center text-center padding-top3 padding-bottom">
+          <div className="col-6 mx-auto text-center">
+            <p className="cormorant-garamond-bold padding-top2 padding-bottom">
+              your score:
+            </p>
+            <span className="roboto-text">
+              Your happiness is above average! You are really living a full
+              life! Though you probably know this already, being happy does not
+              mean a perpetual state of bliss. That&apos;s just not sustainable
+              for human nature. But what it does mean is that you&apos;re able
+              to sit with all of your feelings with curiosity and compassion.
+              You&apos;re able to find the goodness in yourself and others,
+              which means you behave in a way that is kinder & more genuine &
+              facilitates greater happiness in your life. When you give to
+              others, you feel the satisfaction of that generous spirit and
+              experience meaning in your life. You know that you make a
+              difference in big and small ways. Keep on doing what you&apos;re
+              doing & being wonderful you!
+            </span>
+          </div>
+        </div>
+        <div className="col-10 mx-auto padding-bottom5">
           <div className="row justify-content-center">
             <div className="text-center">
-              <i className="fas fa-medkit padding-top2"></i>
+              <div>
+                <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
+              </div>
+              <div>
+                <i className="fas fa-medkit padding-top2"></i>
+              </div>
             </div>
             <p className="cormorant-garamond-bold text-center padding-bottom">
               self-care 101:
@@ -158,28 +184,6 @@ export default function Result1(props) {
               <div className="text-center padding-top">
                 <i className="fas fa-comment-slash"></i>
               </div>
-            </div>
-          </div>
-          <div className="row justify-content-center text-center padding-top3 padding-bottom5">
-            <div className="col-6 mx-auto text-center">
-              <i className="fas fa-arrow-down padding-top5 padding-bottom5"></i>
-              <p className="cormorant-garamond-bold padding-top2 padding-bottom">
-                your score:
-              </p>
-              <span className="roboto-text">
-                Your happiness is above average! You are really living a full
-                life! Though you probably know this already, being happy does
-                not mean a perpetual state of bliss. That&apos;s just not sustainable
-                for human nature. But what it does mean is that you&apos;re able to
-                sit with all of your feelings with curiosity and compassion.
-                You&apos;re able to find the goodness in yourself and others, which
-                means you behave in a way that is kinder & more genuine &
-                facilitates greater happiness in your life. When you give to
-                others, you feel the satisfaction of that generous spirit and
-                experience meaning in your life. You know that you make a
-                difference in big and small ways. Keep on doing what you&apos;re
-                doing & being wonderful you!
-              </span>
             </div>
           </div>
         </div>

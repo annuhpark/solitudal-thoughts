@@ -5,6 +5,8 @@ const app = express();
 const publicPath = path.join(__dirname, 'public');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const uploadsMiddleware = require('./uploads-middleware');
+const authorizationMiddleware = require('./authorization-middleware');
 const jsonMiddleware = express.json();
 const ClientError = require('./client-error');
 const jwt = require('jsonwebtoken');
@@ -18,31 +20,34 @@ const db = new pg.Pool({
   }
 });
 
-app.use(staticMiddleware);
-app.use(jsonMiddleware);
-
 if (process.env.NODE_ENV === 'development') {
   app.use(require('./dev-middleware')(publicPath));
 }
 
-app.use(express.static(publicPath));
+app.use(staticMiddleware);
+app.use(jsonMiddleware);
 
-// app.post('/api/quiz', (req, res, next) => {
-//   const { quizName } = req.body;
-//   const sql = `
-//   insert into "quizzes" ("quizName")
-//   values ($1)
-//   returning *
-//   `;
+app.get('/api/groups', (req, res, next) => {
+  const sql = `
+    select "groupId",
+           "nameOfGroup",
+           "description"
+      from "groups"
+  `;
 
-//   const params = [quizName];
-//   db.query(sql, params)
-//     .then(result => {
-//       const [file] = result.rows;
-//       res.status(201).json(file);
-//     })
-//     .catch(error => next(error));
-// });
+  db.query(sql)
+    .then(result => {
+      const groups = result.rows;
+      res.status(200).json(groups);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+
+});
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
@@ -100,8 +105,27 @@ app.post('/api/auth/log-in', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.use(errorMiddleware);
+app.use(authorizationMiddleware);
 
+app.post('/api/upload', uploadsMiddleware, (req, res, next) => {
+
+  const { nameOfGroup, description } = req.body;
+  const { userId } = req.user;
+  const sql = `
+    insert into "groups" ("nameOfGroup", "description", "userId")
+    values ($1, $2, $3)
+    returning *
+  `;
+  const params = [nameOfGroup, description, userId];
+  db.query(sql, params)
+    .then(result => {
+      const [group] = result.rows;
+      res.status(201).json(group);
+    })
+    .catch(err => next(err));
+});
+
+app.use(errorMiddleware);
 app.listen(process.env.PORT, () => {
   process.stdout.write(`\n\napp listening on port ${process.env.PORT}\n\n`);
 });
