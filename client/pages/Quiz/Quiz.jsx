@@ -22,7 +22,6 @@ class Quiz extends React.Component {
         total = total + parseInt(ele2[i].value);
       }
     }
-    // console.log(total);
     const ele3 = document.getElementsByName('group3');
     for (let i = 0; i < ele3.length; i++) {
       if (ele3[i].checked) {
