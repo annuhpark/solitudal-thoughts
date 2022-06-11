@@ -27,6 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
 
+// Groups
 app.get('/api/groups', (req, res, next) => {
   const sql = `
     select "groupId",
@@ -49,6 +50,31 @@ app.get('/api/groups', (req, res, next) => {
 
 });
 
+// Group Details
+app.get('/api/groups/:groupId', (req, res, next) => {
+  const groupId = Number(req.params.groupId);
+  if (!groupId) {
+    throw new ClientError(400, 'itemId must be a positive integer');
+  }
+  const sql = `
+    select "groupId",
+           "nameOfGroup",
+           "description"
+      from "groups"
+    where  "groupId" = $1
+  `;
+  const params = [groupId];
+  db.query(sql, params)
+    .then(result => {
+      if (!result.rows[0]) {
+        throw new ClientError(400, `cannot find group with groupId ${groupId}`);
+      }
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
+// Sign up
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -72,6 +98,7 @@ app.post('/api/auth/sign-up', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// Log In
 app.post('/api/auth/log-in', (req, res, next) => {
   const { email, userPassword } = req.body;
   if (!email || !userPassword) {
@@ -107,6 +134,7 @@ app.post('/api/auth/log-in', (req, res, next) => {
 
 app.use(authorizationMiddleware);
 
+// Upload
 app.post('/api/upload', uploadsMiddleware, (req, res, next) => {
 
   const { nameOfGroup, description } = req.body;
