@@ -10,6 +10,7 @@ import Welcome from './pages/Welcome';
 import Welcome2 from './pages/Welcome2.jsx';
 import decodeToken from './lib/decode-token';
 import Groups from './pages/Groups';
+import GroupDetails from './pages/GroupDetails';
 import Quiz from './pages/Quiz/Quiz';
 import SignOut from './components/SignOut';
 import Result1 from './pages/Quiz/Result1';
@@ -60,6 +61,10 @@ export default class App extends React.Component {
     }
     if (route.path === 'group' && token) {
       return <Groups />;
+    }
+    if (route.path === 'groups') {
+      const groupId = route.params.get('groupId');
+      return <GroupDetails groupId={groupId} />;
     }
     if (route.path === 'group' && !token) {
       return (

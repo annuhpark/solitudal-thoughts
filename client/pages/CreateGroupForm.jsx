@@ -67,6 +67,7 @@ export default class CreateGroupForm extends React.Component {
             <Form.Group className="mb-3" controlId="FormTitle">
               <Form.Label className="roboto-nav-links">name:</Form.Label>
               <Form.Control
+                className="input"
                 type="text"
                 name="nameOfGroup"
                 placeholder="enter name of your group"
@@ -77,6 +78,7 @@ export default class CreateGroupForm extends React.Component {
             <Form.Group>
               <Form.Label className="roboto-nav-links">description:</Form.Label>
               <Form.Control
+                className="input"
                 name="description"
                 as="textarea"
                 placeholder="describe your group"

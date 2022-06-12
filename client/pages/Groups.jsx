@@ -88,7 +88,7 @@ export default class TotalGroups extends React.Component {
 }
 
 function Group(props) {
-  const { nameOfGroup } = props.group;
+  const { nameOfGroup, groupId } = props.group;
 
   return (
     <Button
@@ -96,6 +96,7 @@ function Group(props) {
       variant="primary"
       size="med"
       type="button"
+      href={`#groups?groupId=${groupId}`}
     >
       {nameOfGroup}
     </Button>
