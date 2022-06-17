@@ -12,7 +12,7 @@ export default function OurStory(props) {
           </span>
         </div>
       </div>
-      <div className="container-fluid grey-background">
+      <div className="container-fluid">
         <div className="justify-content-center text-center padding-top3">
           <i className="fas fa-star-and-crescent"></i>
           <p className="cormorant-garamond-bold padding-top2 padding-bottom">ABOUT US</p>

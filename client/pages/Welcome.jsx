@@ -25,7 +25,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <div className="background container-fluid grey-background">
+        <div className="background container-fluid">
           <div
             className="background justify-content-center text-center padding-top3"
             onClick={this.hideModal}

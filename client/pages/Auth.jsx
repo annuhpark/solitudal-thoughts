@@ -22,7 +22,7 @@ const Auth = () => {
     }
   };
 
-  return <div className="container-fluid grey-background">{renderPage()}</div>;
+  return <div className="container-fluid">{renderPage()}</div>;
 };
 
 export default Auth;

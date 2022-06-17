@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 export default class GroupDetails extends React.Component {
   constructor(props) {
@@ -20,13 +21,27 @@ export default class GroupDetails extends React.Component {
     }
     const { nameOfGroup, description } = this.state.group;
     return (
-      <div className="container-fluid grey-background">
-        <div className="justify-content-center text-center padding-top3 padding-bottom5">
-          <i className="fas fa-star-and-crescent"></i>
-          <p className="cormorant-garamond-bold padding-top2 padding-bottom">
-            {nameOfGroup}
-          </p>
-          <p className="cormorant-garamond-light padding-bottom5">{description}</p>
+      <div className="container-fluid">
+        <div className="row justify-content-center padding-top3 padding-bottom5">
+          <div className="col-5 padding-top2 padding-bottom">
+            <p className="cormorant-garamond-bold-subtext">{nameOfGroup}</p>
+            <p className="cormorant-garamond-light-subtext padding-bottom5">
+              {description}
+            </p>
+          </div>
+          <div className="col-5 text-center padding-top2 padding-bottom">
+            <i className="fas fa-star-and-crescent"></i>
+            <div className="padding-top2">
+              <Button
+                className="quiz-button btn btn-primary btn-med black-button margin-bottom"
+                variant="primary"
+                type="button"
+                href="#createcomment"
+              >
+                leave a comment
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     );

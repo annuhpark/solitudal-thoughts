@@ -22,7 +22,7 @@ export default class CreateGroupForm extends React.Component {
     formData.append('description', this.state.description);
     formData.append('userId', this.state.userId);
 
-    fetch('/api/upload', {
+    fetch('/api/creategroup', {
       method: 'POST',
       headers: { 'X-Access-Token': window.localStorage.getItem('solitudalthoughts-jwt') },
       body: formData
@@ -55,7 +55,7 @@ export default class CreateGroupForm extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid grey-background">
+      <div className="container-fluid">
         <div className="justify-content-center text-center padding-top3">
           <i className="fas fa-star-and-crescent"></i>
           <p className="cormorant-garamond-bold padding-top2 padding-bottom">

@@ -3,7 +3,7 @@ import React from 'react';
 export default class Navigation extends React.Component {
   render() {
     return (
-      <div className="container-fluid padding-bottom-sm">
+      <div className="container-fluid padding-bottom-sm white-background">
         <div className="row">
           <a href="#" className="col cormorant-garamond-heading">
             SOLITU<br></br>

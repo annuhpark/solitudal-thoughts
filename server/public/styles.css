@@ -53,6 +53,12 @@ span.cormorant-garment-light {
   font-weight: 300;
 }
 
+.cormorant-garamond-bold-subtext {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
 /* Anchor  */
 
 a {
@@ -139,6 +145,10 @@ a:hover {
 
 .purple-background {
   background-color: #aba4d6;
+}
+
+.white-background {
+  background-color: white;
 }
 
 /* Submit Button */

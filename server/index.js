@@ -47,14 +47,13 @@ app.get('/api/groups', (req, res, next) => {
         error: 'An unexpected error occured.'
       });
     });
-
 });
 
 // Group Details
 app.get('/api/groups/:groupId', (req, res, next) => {
   const groupId = Number(req.params.groupId);
   if (!groupId) {
-    throw new ClientError(400, 'itemId must be a positive integer');
+    throw new ClientError(400, 'groupId must be a positive integer');
   }
   const sql = `
     select "groupId",
@@ -70,6 +69,31 @@ app.get('/api/groups/:groupId', (req, res, next) => {
         throw new ClientError(400, `cannot find group with groupId ${groupId}`);
       }
       res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
+// Comment
+app.get('/api/entries/:groupId', (req, res, next) => {
+  const groupId = Number(req.params.groupId);
+  if (Number.isInteger(groupId) !== true || groupId < 0) {
+    throw new ClientError(400, 'groupId must be a positive integer');
+  }
+  const sql = `
+    select "entryId",
+           "profilePhotoUrl",
+           "commentId",
+           "message",
+           "entries"."userId"
+      from "entries"
+      join "users" using ("userId")
+     where "groupId" = $1
+     order by "entries"."createdAt" desc
+  `;
+  const params = [groupId];
+  db.query(sql, params)
+    .then(result => {
+      res.status(201).json(result.rows);
     })
     .catch(err => next(err));
 });
@@ -134,8 +158,8 @@ app.post('/api/auth/log-in', (req, res, next) => {
 
 app.use(authorizationMiddleware);
 
-// Upload
-app.post('/api/upload', uploadsMiddleware, (req, res, next) => {
+// Post Group
+app.post('/api/createGroup', uploadsMiddleware, (req, res, next) => {
 
   const { nameOfGroup, description } = req.body;
   const { userId } = req.user;
@@ -149,6 +173,25 @@ app.post('/api/upload', uploadsMiddleware, (req, res, next) => {
     .then(result => {
       const [group] = result.rows;
       res.status(201).json(group);
+    })
+    .catch(err => next(err));
+});
+
+// Post Entries
+app.post('/api/groups/createEntries/:groupId', uploadsMiddleware, (req, res, next) => {
+  const groupId = parseFloat(req.params.groupId);
+  const message = req.body.comment;
+  const { userId } = req.user;
+  const sql = `
+    insert into "entries" ("message", "groupId", "userId", "createdAt")
+    values ($1, $2, $3, now())
+    returning *;
+  `;
+  const params = [message, userId, groupId];
+  db.query(sql, params)
+    .then(result => {
+      const [comment] = result.rows;
+      res.status(201).json(comment);
     })
     .catch(err => next(err));
 });
