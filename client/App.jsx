@@ -17,6 +17,7 @@ import Result1 from './pages/Quiz/Result1';
 import Result2 from './pages/Quiz/Result2';
 import Result3 from './pages/Quiz/Result3';
 import CreateGroupForm from './pages/CreateGroupForm.jsx';
+import DemoSignIn from './components/DemoSignIn';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'signin') {
       return <SignIn />;
+    }
+    if (route.path === 'demosignin') {
+      return <DemoSignIn />;
     }
     if (route.path === 'welcome' & !quiz) {
       return <Welcome />;

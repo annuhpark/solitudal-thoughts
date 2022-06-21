@@ -3,7 +3,7 @@ values ('mental health quiz')
 returning *;
 
 insert into "users" ("email", "password")
-values ('bobby@bobby.com', 'bananas')
+values ('admin@gmail.com', '$argon2i$v=19$m=4096,t=3,p=1$b3OBGnXlp7VYNEucbPu6QA$sXCR3vHGSFWCPReZMJA+yLazk9vmRpKZZgJ532dC5kE')
 returning *;
 
 insert into "groups" ("nameOfGroup", "description", "userId")

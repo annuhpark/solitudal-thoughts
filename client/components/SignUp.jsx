@@ -65,26 +65,38 @@ const SignUp = () => {
           </Form.Group>
         </div>
         <div className="row justify-content-center">
-          <Form.Group
-            className="w-25 p-3 text-center margin-bottom"
-            controlId="formBasicButton"
-          >
-            <Button
-              className="btn btn-primary btn-sm black-button margin-right"
-              variant="primary"
-              type="submit"
-            >
-              sign up
-            </Button>
-            <Button
-              href="#signin"
-              variant="primary"
-              type="button"
-              className="btn btn-primary btn-sm black-button"
-            >
-              already a member?
-            </Button>
-          </Form.Group>
+          <div className="col-4">
+            <div className="row justify-content-center">
+              <Form.Group
+                className="text-center margin-bottom justify-content-sm-around"
+                controlId="formBasicButton"
+              >
+                <Button
+                  className="auth-buttons margin-bottom"
+                  variant="primary"
+                  type="submit"
+                >
+                  sign up
+                </Button>
+                <Button
+                  href="#signin"
+                  variant="primary"
+                  type="button"
+                  className="auth-buttons margin-bottom"
+                >
+                  sign in
+                </Button>
+                <Button
+                  href="#demosignin"
+                  variant="primary"
+                  type="button"
+                  className="auth-buttons margin-bottom"
+                >
+                  demo login
+                </Button>
+              </Form.Group>
+            </div>
+          </div>
         </div>
       </Form>
       <div className="justify-content-center text-center">
