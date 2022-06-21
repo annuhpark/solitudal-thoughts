@@ -77,3 +77,20 @@ img {
   width: 40%;
   margin: 5px;
 }
+
+/* Columns Suitable for Mobile Views */
+
+.column-half {
+  width: 80%;
+}
+
+/* Desktop Views */
+@media screen and (min-width: 768px) {
+  .container-fluid {
+    max-width: inherit;
+  }
+
+  .column-half {
+    width: 36%;
+  }
+}

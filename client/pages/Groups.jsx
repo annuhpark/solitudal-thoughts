@@ -48,8 +48,8 @@ export default class TotalGroups extends React.Component {
           </div>
         </div>
         <div className="container-fluid grey-background">
-          <div className="row justify-content-center text-center padding-top2 padding-bottom5">
-            <div className="col-4">
+          <div className="row d-flex justify-content-evenly text-center padding-top2 padding-bottom5">
+            <div className="column-half">
               <p className="cormorant-garamond-bold padding-top5">
                 your community
               </p>
@@ -65,7 +65,7 @@ export default class TotalGroups extends React.Component {
                 </Button>
               </div>
             </div>
-            <div className="col-4">
+            <div className="column-half">
               <div className="row justify-content-center text-center padding-top5">
                 <p className="cormorant-garamond-bold">groups:</p>
                 <div className="col-12">
@@ -92,7 +92,7 @@ function Group(props) {
 
   return (
     <Button
-      className="quiz-button btn btn-primary btn-med black-button group-buttons"
+      className="btn btn-primary btn-med black-button group-buttons"
       variant="primary"
       size="med"
       type="button"
