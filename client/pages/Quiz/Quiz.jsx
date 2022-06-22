@@ -103,9 +103,9 @@ class Quiz extends React.Component {
           </div>
           <div className="col-6 mx-auto">
             <Form onSubmit={handleSubmit}>
-              <p className="roboto-questions">
+              <label className="roboto-questions" htmlFor="group1">
                 1. Do you have little interest or pleasure in doing things?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -115,7 +115,7 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-1`}
-                      value='1'
+                      value="1"
                     />
                     <Form.Check
                       inline
@@ -123,7 +123,7 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-2`}
-                      value='2'
+                      value="2"
                     />
                     <Form.Check
                       inline
@@ -131,7 +131,7 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-3`}
-                      value='3'
+                      value="3"
                     />
                     <Form.Check
                       inline
@@ -139,14 +139,14 @@ class Quiz extends React.Component {
                       name="group1"
                       type={type}
                       id={`inline-${type}-4`}
-                      value='4'
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group2">
                 2. Are you feeling depressed, down, or hopeless these days?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -155,40 +155,40 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group2"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-5`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group2"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-6`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group2"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-7`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group2"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-8`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group3">
                 3. How often have you been bothered by trouble falling or
                 staying asleep, or sleeping too much?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -197,39 +197,39 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group3"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-9`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group3"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-10`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group3"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}11`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group3"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-12`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions">
+              <label className="roboto-questions" htmlFor="group4">
                 4. Do you have poor appetite or tend to overeat?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -238,40 +238,40 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group4"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-13`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group4"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-14`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group4"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-15`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group4"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-16`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group5">
                 5. Do you have trouble concentrating on things, such as reading
                 the newspaper or watching TV?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -280,41 +280,41 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group5"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-17`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group5"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-18`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group5"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-19`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group5"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-20`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group6">
                 6. Have other people noticed you moving or speaking so slowly?
                 Or the opposite - being so fidgety or restless that you have
                 been moving around a lot more than usual?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -323,40 +323,40 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group6"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-21`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group6"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-22`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group6"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-23`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group6"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-24`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group7">
                 7. Do you have thoughts that you would be better off dead, or of
                 hurting yourself?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -365,40 +365,40 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group7"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-25`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group7"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-26`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group7"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-27`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group7"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-28`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group8">
                 8. Do you tend to feel bad about yourself - that you are a
                 failure by letting yourself down or your family down?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -407,39 +407,39 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group8"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-29`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group8"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-30`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group8"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-31`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group8"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-32`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group9">
                 9. Are you feeling down, depressed or hopeless?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -448,40 +448,40 @@ class Quiz extends React.Component {
                       label="Not at all"
                       name="group9"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-33`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Several days"
                       name="group9"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-34`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="More than half the days"
                       name="group9"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-35`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Nearly every day"
                       name="group9"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-36`}
+                      value="4"
                     />
                   </div>
                 ))}
               </div>
-              <p className="roboto-questions padding-top2">
+              <label className="roboto-questions padding-top2" htmlFor="group10">
                 10. If you checked off any problems, how difficult have these
                 problems made it for you at work, home or with other people?
-              </p>
+              </label>
               <div className="justify-content-center text-center padding-top">
                 {['radio'].map(type => (
                   <div key={`inline-${type}`} className="mb-3 roboto-nav-links">
@@ -490,32 +490,32 @@ class Quiz extends React.Component {
                       label="Not difficult at all"
                       name="group10"
                       type={type}
-                      id={`inline-${type}-1`}
-                      value='1'
+                      id={`inline-${type}-37`}
+                      value="1"
                     />
                     <Form.Check
                       inline
                       label="Somewhat difficult"
                       name="group10"
                       type={type}
-                      id={`inline-${type}-2`}
-                      value='2'
+                      id={`inline-${type}-38`}
+                      value="2"
                     />
                     <Form.Check
                       inline
                       label="Very difficult"
                       name="group10"
                       type={type}
-                      id={`inline-${type}-3`}
-                      value='3'
+                      id={`inline-${type}-39`}
+                      value="3"
                     />
                     <Form.Check
                       inline
                       label="Extremely difficult"
                       name="group10"
                       type={type}
-                      id={`inline-${type}-4`}
-                      value='4'
+                      id={`inline-${type}-40`}
+                      value="4"
                     />
                   </div>
                 ))}

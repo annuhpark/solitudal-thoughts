@@ -59,7 +59,7 @@ export default class DemoSignIn extends React.Component {
           </div>
           <Form onSubmit={handleSubmit}>
             <div className="row justify-content-center">
-              <Form.Group className="w-25 p-3" controlId="formBasicEmail">
+              <Form.Group className="formgroup p-3" controlId="formBasicEmail">
                 <Form.Label className="roboto-nav-links">Email</Form.Label>
                 <Form.Control
                   className="input"
@@ -72,7 +72,7 @@ export default class DemoSignIn extends React.Component {
               </Form.Group>
             </div>
             <div className="row justify-content-center">
-              <Form.Group className="w-25 p-3" controlId="formBasicPassword">
+              <Form.Group className="formgroup p-3" controlId="formBasicPassword">
                 <Form.Label className="roboto-nav-links">Password</Form.Label>
                 <Form.Control
                   className="input"
@@ -86,7 +86,7 @@ export default class DemoSignIn extends React.Component {
             </div>
             <div className="row justify-content-center">
               <Form.Group
-                className="w-25 p-3 text-center margin-bottom"
+                className="formgroup p-3 text-center margin-bottom"
                 controlId="formBasicButton"
               >
                 <Button
