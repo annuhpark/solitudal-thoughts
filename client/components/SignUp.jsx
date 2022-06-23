@@ -41,7 +41,7 @@ const SignUp = () => {
       </div>
       <Form onSubmit={handleSubmit}>
         <div className="row justify-content-center">
-          <Form.Group className="w-25 p-3" controlId="formBasicEmail">
+          <Form.Group className="formgroup p-3" controlId="formBasicEmail">
             <Form.Label className="roboto-nav-links">Email</Form.Label>
             <Form.Control
               className="input"
@@ -53,7 +53,7 @@ const SignUp = () => {
           </Form.Group>
         </div>
         <div className="row justify-content-center">
-          <Form.Group className="w-25 p-3" controlId="formBasicPassword">
+          <Form.Group className="formgroup p-3" controlId="formBasicPassword">
             <Form.Label className="roboto-nav-links">Password</Form.Label>
             <Form.Control
               className="input"
