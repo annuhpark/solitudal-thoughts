@@ -167,6 +167,17 @@ a:hover {
   border-color: black;
 }
 
+.formgroup {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Radio */
+
+form.check {
+  cursor: pointer;
+}
+
 /* Border Line */
 
 hr {

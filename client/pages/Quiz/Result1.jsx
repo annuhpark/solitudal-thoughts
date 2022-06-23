@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default function Result1(props) {
-  return (
+export default class Result1 extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
     <div>
       <div className="container-fluid purple-background">
         <div className="justify-content-center text-center padding-top3 padding-bottom3">
@@ -189,5 +195,6 @@ export default function Result1(props) {
         </div>
       </div>
     </div>
-  );
+    );
+  }
 }

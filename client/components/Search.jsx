@@ -15,7 +15,7 @@ export default class Search extends React.Component {
       <div>
         <input
           type="text"
-          className="input"
+          className="input form-control formgroup"
           onChange={this.handleChange}
           placeholder="search for a group"
         />

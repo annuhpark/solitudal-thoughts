@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 
 export default class GroupDetails extends React.Component {
   constructor(props) {
@@ -31,7 +31,8 @@ export default class GroupDetails extends React.Component {
           </div>
           <div className="col-5 text-center padding-top2 padding-bottom">
             <i className="fas fa-star-and-crescent"></i>
-            <div className="padding-top2">
+            {/* Pending Feature */}
+            {/* <div className="padding-top2">
               <Button
                 className="quiz-button btn btn-primary btn-med black-button margin-bottom"
                 variant="primary"
@@ -40,7 +41,7 @@ export default class GroupDetails extends React.Component {
               >
                 leave a comment
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
