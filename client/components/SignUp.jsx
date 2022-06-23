@@ -52,7 +52,7 @@ const SignUp = () => {
             />
           </Form.Group>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center padding-bottom-sm">
           <Form.Group className="formgroup p-3" controlId="formBasicPassword">
             <Form.Label className="roboto-nav-links">Password</Form.Label>
             <Form.Control
@@ -64,38 +64,36 @@ const SignUp = () => {
             />
           </Form.Group>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-4">
-            <div className="row justify-content-center">
-              <Form.Group
-                className="text-center margin-bottom justify-content-sm-around"
-                controlId="formBasicButton"
+        <div className="row justify-content-center padding-bottom">
+          <div className="formgroup">
+            <Form.Group
+              className="text-center margin-bottom d-flex justify-content-sm-between"
+              controlId="formBasicButton"
+            >
+              <Button
+                className="auth-buttons margin-bottom"
+                variant="primary"
+                type="submit"
               >
-                <Button
-                  className="auth-buttons margin-bottom"
-                  variant="primary"
-                  type="submit"
-                >
-                  sign up
-                </Button>
-                <Button
-                  href="#signin"
-                  variant="primary"
-                  type="button"
-                  className="auth-buttons margin-bottom"
-                >
-                  sign in
-                </Button>
-                <Button
-                  href="#demosignin"
-                  variant="primary"
-                  type="button"
-                  className="auth-buttons margin-bottom"
-                >
-                  demo login
-                </Button>
-              </Form.Group>
-            </div>
+                sign up
+              </Button>
+              <Button
+                href="#signin"
+                variant="primary"
+                type="button"
+                className="auth-buttons margin-bottom"
+              >
+                sign in
+              </Button>
+              <Button
+                href="#demosignin"
+                variant="primary"
+                type="button"
+                className="auth-buttons margin-bottom"
+              >
+                demo login
+              </Button>
+            </Form.Group>
           </div>
         </div>
       </Form>
