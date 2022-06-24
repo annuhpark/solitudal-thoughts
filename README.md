@@ -95,3 +95,14 @@ Try the application live [here!](https://solitudal-thoughts.herokuapp.com/)
     ```shell
     pgweb --db=solitudal-thoughts
     ```
+8. Run NPM build to create your main.js file.
+
+    ```shell
+    npm run build
+    ```
+    
+9. Start the project with dev script. Your updates can be seen at http://localhost:3000 in your browser.
+
+    ```shell
+    npm run dev
+    ```
