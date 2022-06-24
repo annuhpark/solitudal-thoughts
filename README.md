@@ -1,6 +1,6 @@
 # Solitudal Thoughts
 
-A full stack web application for mental health victims that want to find natural and affordable ways to their mind. 
+A full stack web application for mental health victims that want to find natural and affordable ways to heal their mind. 
 
 ## Why I Built This Project
 
