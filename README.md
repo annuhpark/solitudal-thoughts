@@ -1,16 +1,21 @@
-# student-grade-table
+# Solitudal Thoughts
 
-A full stack JavaScript application for teachers who want to manage course records.
+A full stack web application for mental health advocates that want to find natural ways to their mind. 
 
 ## Technologies Used
 
 - React.js
 - Webpack
 - Bootstrap 5
+- React Bootstrap
 - Node.js
-- MongoDB
+- Express.js
+- Babel
+- Dotenv
+- PostgreSQL
 - HTML5
 - CSS3
+- JavaScript ES5/ES6
 - Heroku
 
 ## Live Demo
@@ -19,10 +24,20 @@ Try the application live at [https://student-grade-table.lfz.com](https://studen
 
 ## Features
 
-- Teachers can view a list of recorded grades.
-- Teachers can view the average grade.
-- Teachers can add a grade to the table.
-- Teachers can delete a grade from the table.
+- User can create an account.
+- User can sign into their account.
+- User can view 'our story' which talks about the purpose of this app.
+- User can take a quiz that measures the severity of their mental illness.
+- User can get suggestions on how to improve their mental health state depending on their results.
+- User can create a group.
+- User can search for other groups.
+- User can sign out.
+
+## Stretch Features
+
+- User can join groups.
+- User can write entries per group.
+- User can read entries per group.
 
 ## Preview
 
