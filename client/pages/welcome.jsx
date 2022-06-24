@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import QuizModal from '../components/Modal';
+import QuizModal from '../components/modal';
 
 export default class Welcome extends React.Component {
   constructor(props) {

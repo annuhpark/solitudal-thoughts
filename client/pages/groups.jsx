@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import Search from '../components/Search';
+import Search from '../components/search';
 
 export default class TotalGroups extends React.Component {
   constructor(props) {
