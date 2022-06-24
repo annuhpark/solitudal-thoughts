@@ -13,6 +13,7 @@ A full stack web application for mental health victims that want to find natural
 - Babel
 - Dotenv
 - PostgreSQL
+- JSON Web Token
 - HTML5
 - CSS3
 - JavaScript ES5/ES6
