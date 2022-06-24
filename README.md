@@ -20,7 +20,7 @@ A full stack web application for mental health victims that want to find natural
 
 ## Live Demo
 
-Try the application live at [https://student-grade-table.lfz.com](https://student-grade-table.lfz.com)
+Try the application live [here](https://solitudal-thoughts.herokuapp.com/)
 
 ## Features
 
