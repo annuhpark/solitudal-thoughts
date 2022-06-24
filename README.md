@@ -41,7 +41,7 @@ Try the application live [here!](https://solitudal-thoughts.herokuapp.com/)
 
 ## Preview
 
-![SGT React](assets/sgt-react.gif)
+[solitudal-thoughts-gif](https://user-images.githubusercontent.com/69396309/175664495-c68405d9-b14c-48af-b514-8dcf95b99246.gif)
 
 ## Development
 
