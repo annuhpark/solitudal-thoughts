@@ -47,33 +47,51 @@ Try the application live [here!](https://solitudal-thoughts.herokuapp.com/)
 
 ### System Requirements
 
-- Node.js 10 or higher
+- Node.js 16 or higher
 - NPM 6 or higher
-- MongoDB 4 or higher
+- Postgres
 
 ### Getting Started
 
 1. Clone the repository.
 
     ```shell
-    git clone https://github.com/Learning-Fuze/sgt-react
-    cd sgt-react
+    git clone git@github.com:annuhpark/solitudal-thoughts.git
+    cd solitudal-thoughts
     ```
 
-1. Install all dependencies with NPM.
+2. Install all dependencies with NPM.
 
     ```shell
     npm install
     ```
 
-1. Import the example database to MongoDB.
+3. Make a copy of the provided .env.example into your own .env file.
 
     ```shell
-    mongoimport --db sgt-react database/dump.json
+    cp .env.example .env
     ```
 
-1. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
+4. Start your postgreSQL service
 
     ```shell
-    npm run dev
+    sudo service postgresql start
+    ```
+
+5. Create your database with Postgresql, then import database schema.
+
+    ```shell
+    createdb solitudal-thoughts
+    ```
+    
+6. Create your database with Postgresql, then import database schema.
+
+    ```shell
+    npm run db:import
+    ```
+    
+7. View your database with pgweb GUI tool for PostgreQL. Can also be seen at http://localhost:8081 in your browser once it's running.
+
+    ```shell
+    pgweb --db=solitudal-thoughts
     ```
