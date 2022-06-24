@@ -83,13 +83,17 @@ img {
 }
 
 .auth-buttons {
-  width: 35%;
+  width: 50%;
   margin: 4px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
+  font-size: 15px;
   background-color: black;
   color: white;
-  padding: 3px 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 /* Columns Suitable for Mobile Views */

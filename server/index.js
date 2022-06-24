@@ -26,6 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
+app.use(errorMiddleware);
 
 // Groups
 app.get('/api/groups', (req, res, next) => {
@@ -173,25 +174,6 @@ app.post('/api/createGroup', uploadsMiddleware, (req, res, next) => {
     .then(result => {
       const [group] = result.rows;
       res.status(201).json(group);
-    })
-    .catch(err => next(err));
-});
-
-// Post Entries
-app.post('/api/groups/createEntries/:groupId', uploadsMiddleware, (req, res, next) => {
-  const groupId = parseFloat(req.params.groupId);
-  const message = req.body.comment;
-  const { userId } = req.user;
-  const sql = `
-    insert into "entries" ("message", "groupId", "userId", "createdAt")
-    values ($1, $2, $3, now())
-    returning *;
-  `;
-  const params = [message, userId, groupId];
-  db.query(sql, params)
-    .then(result => {
-      const [comment] = result.rows;
-      res.status(201).json(comment);
     })
     .catch(err => next(err));
 });

@@ -1,23 +1,23 @@
 import React from 'react';
 import { parseRoute } from './lib';
-import Navigation from './components/Navigation';
-import NotFound from './pages/NotFound';
-import Auth from './pages/Auth';
-import OurStory from './pages/OurStory';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import Welcome from './pages/Welcome';
-import Welcome2 from './pages/Welcome2.jsx';
+import Navigation from './components/navigation';
+import NotFound from './pages/not-found';
+import Auth from './pages/auth';
+import OurStory from './pages/our-story';
+import SignIn from './components/sign-in';
+import SignUp from './components/sign-up';
+import Welcome from './pages/welcome';
+import Welcome2 from './pages/welcome-two';
 import decodeToken from './lib/decode-token';
-import Groups from './pages/Groups';
-import GroupDetails from './pages/GroupDetails';
-import Quiz from './pages/Quiz/Quiz';
-import SignOut from './components/SignOut';
-import Result1 from './pages/Quiz/Result1';
-import Result2 from './pages/Quiz/Result2';
-import Result3 from './pages/Quiz/Result3';
-import CreateGroupForm from './pages/CreateGroupForm.jsx';
-import DemoSignIn from './components/DemoSignIn';
+import Groups from './pages/groups';
+import GroupDetails from './pages/group-details';
+import Quiz from './pages/Quiz/quiz';
+import SignOut from './components/sign-out';
+import Result1 from './pages/Quiz/result-one';
+import Result2 from './pages/Quiz/result-two';
+import Result3 from './pages/Quiz/result-three';
+import CreateGroupForm from './pages/create-group-form';
+import DemoSignIn from './components/demo-sign-in';
 
 export default class App extends React.Component {
   constructor(props) {

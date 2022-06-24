@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { parseRoute } from '../lib';
-import SignUp from '../components/SignUp';
-import SignIn from '../components/SignIn';
+import SignUp from '../components/sign-up';
+import SignIn from '../components/sign-in';
 
 const Auth = () => {
   const [route, setRoute] = useState(parseRoute(window.location.hash));
