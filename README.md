@@ -78,13 +78,13 @@ Try the application live [here!](https://solitudal-thoughts.herokuapp.com/)
     sudo service postgresql start
     ```
 
-5. Create your database with Postgresql, then import database schema.
+5. Create your database with postgreSQL, then import database schema.
 
     ```shell
     createdb solitudal-thoughts
     ```
     
-6. Create your database with Postgresql, then import database schema.
+6. Create your database with postgreSQL, then import database schema.
 
     ```shell
     npm run db:import
