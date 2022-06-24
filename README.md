@@ -1,6 +1,10 @@
 # Solitudal Thoughts
 
-A full stack web application for mental health victims that want to find natural ways to their mind. 
+A full stack web application for mental health victims that want to find natural and affordable ways to heal their mind. 
+
+## Why I Built This Project
+
+I am a strong believer that mental health is equally as important as physical health. Our generation, fortunately, has taken steps to de-stagmatize getting treatment for your mental health; however, that still does not mean the treatment is accessible to all. It comes with a cost, so this app was designed specifically for victims of mental health issues that want to find natural and affordable ways to take care of their mind. 
 
 ## Technologies Used
 
@@ -13,6 +17,7 @@ A full stack web application for mental health victims that want to find natural
 - Babel
 - Dotenv
 - PostgreSQL
+- JSON Web Token
 - HTML5
 - CSS3
 - JavaScript ES5/ES6
@@ -41,7 +46,9 @@ Try the application live [here!](https://solitudal-thoughts.herokuapp.com/)
 
 ## Preview
 
-![SGT React](assets/sgt-react.gif)
+![solitudal-thoughts-gif](https://user-images.githubusercontent.com/69396309/175664872-417b7b5b-2d20-403e-820f-61c937018c4f.gif)
+
+![solitudal-thoughts-gif2](https://user-images.githubusercontent.com/69396309/175665093-f9920b27-2b4d-4927-a30d-856b9ca8162c.gif)
 
 ## Development
 
