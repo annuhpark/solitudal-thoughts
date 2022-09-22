@@ -4,7 +4,7 @@ A full stack web application for mental health victims that want to find natural
 
 ## Why I Built This Project
 
-I am a strong believer that mental health is equally as important as physical health. Our generation, fortunately, has taken steps to de-stagmatize getting treatment for your mental health; however, that still does not mean the treatment is accessible to all. It comes with a cost, so this app was designed specifically for victims of mental health issues that want to find natural and affordable ways to take care of their mind. 
+I am a strong believer that mental health is equally as important as physical health. Our generation, fortunately, has taken steps to de-stigmatize getting treatment for your mental health; however, that still does not mean the treatment is accessible to all. It comes with a cost, so this app was designed specifically for victims of mental health issues that want to find natural and affordable ways to take care of their mind. 
 
 ## Technologies Used
 
